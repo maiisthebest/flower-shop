@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Card from "./Card";
 import userEvent from "@testing-library/user-event";
 
@@ -61,22 +61,23 @@ describe("Card", () => {
   });
 
   test("should toggle heart status", async () => {
+    const user = userEvent.setup();
     render(<Card {...cardProps} favoured={false} />);
 
-    expect(screen.queryByAltText("filled heart")).not.toBeInTheDocument();
     expect(screen.getByAltText("outlined heart")).toBeInTheDocument();
+    expect(screen.queryByAltText("filled heart")).not.toBeInTheDocument();
 
     // User clicks to favour the flower
     const buttonElement = screen.getByRole("button");
-    await userEvent.click(buttonElement);
+    await user.click(buttonElement);
 
+    expect(await screen.findByAltText("filled heart")).toBeInTheDocument();
     expect(screen.queryByAltText("outlined heart")).not.toBeInTheDocument();
-    expect(screen.getByAltText("filled heart")).toBeInTheDocument();
 
     // User clicks to unfavour the flower
-    await userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
 
+    expect(await screen.findByAltText("outlined heart")).toBeInTheDocument();
     expect(screen.queryByAltText("filled heart")).not.toBeInTheDocument();
-    expect(screen.getByAltText("outlined heart")).toBeInTheDocument();
   });
 });
