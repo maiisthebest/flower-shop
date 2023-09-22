@@ -4,13 +4,13 @@ Welcome to the Flower Shop React App repository! This project has been created w
 
 ## About the Project
 
-Our project centers around a simply flower shop, where visitors can explore a delightful array of flowers and put their React Testing Library skills into action. Here's what you can expect from this project:
+This project centers around a simply flower shop, where visitors can explore a wide selection of flowers and put their React Testing Library skills into action. Here's what you can expect from this project:
 
-- Browse through a wide selection of beautiful flowers
+- Browse through a wide selection of beautiful blooms
 - Show your appreciation for the flowers by liking them
 - Easily filter through the flower inventory
 
-This project serves as a simple hands-on experience for React testing novices. By working on this flower shop app, you'll gain practical insights into testing React components effectively, ensuring your applications are robust and bug-free. As a bonus, since I'm a big fan of test-driven development (TDD), you will learn firsthand experience using TDD too.
+This project serves as a simple hands-on experience for React testing novices. By working on this flower shop app, you'll gain practical insights into testing React components effectively, ensuring your applications are robust and bug-free. As a bonus, since I'm a big fan of test-driven development (TDD), you will learn firsthand experience using TDD too (woo!).
 
 ## Getting Started
 
