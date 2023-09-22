@@ -38,3 +38,8 @@ Launches the test runner in the interactive watch mode.
 ### `npm run build`
 
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. The app is now ready to be deployed!
+
+## Resources
+
+- [The React Testing Library Bootcamp - The Developer Guide](https://www.udemy.com/course/the-react-testing-library-bootcamp/) is an excellent Udemy course that I'd highly recommend to anyone wanting to learn more about React Testing Library. Throughout the project, I have used a lot of content I learnt from the course!
+- Beautiful photos of flowers were taken from [Unsplash](https://unsplash.com/)
