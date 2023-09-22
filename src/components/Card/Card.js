@@ -11,7 +11,7 @@ const Card = ({ name, phone, email, image, favoured }) => {
   };
 
   return (
-    <div className="card">
+    <article className="card">
       <div className="card-header">
         <img src={image.url} alt={image.alt} className="card-img" />
         <button className="heart" onClick={clickHandler}>
@@ -28,7 +28,7 @@ const Card = ({ name, phone, email, image, favoured }) => {
         <p>{phone}</p>
         <p>{email}</p>
       </div>
-    </div>
+    </article>
   );
 };
 
