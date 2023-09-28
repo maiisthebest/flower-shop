@@ -10,12 +10,12 @@ const flowers = [
     favoured: false,
   },
   {
-    name: "Sunflower",
+    name: "Yellow Daisy",
     phone: "222-333-444",
     email: "def@some-email.com",
     image: {
-      url: "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80",
-      alt: "sunflower",
+      url: "https://plus.unsplash.com/premium_photo-1675370791891-b5c58d0bc130?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      alt: "yellow daisy",
     },
     favoured: true,
   },
