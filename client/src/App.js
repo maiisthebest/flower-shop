@@ -1,16 +1,7 @@
-import Cards from "./components/Cards/Cards";
-import Filter from "./components/Filter/Filter";
-import flowers from "./mocks/flowers";
-
-import "./App.css";
+import Flowers from "./components/Flowers/Flowers";
 
 function App() {
-  return (
-    <div className="app-container">
-      <Filter />
-      <Cards flowers={flowers} />
-    </div>
-  );
+  return <Flowers />;
 }
 
 export default App;
