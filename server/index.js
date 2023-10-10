@@ -1,5 +1,5 @@
 const express = require("express");
-const { cats } = require("./data");
+const { flowers } = require("./data");
 const cors = require("cors");
 
 const app = express();
@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 
 app.get("/flowers", async (req, res) => {
-  return res.json(cats);
+  return res.json(flowers);
 });
 
 app.listen(4000, () => {
