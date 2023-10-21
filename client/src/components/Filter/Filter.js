@@ -1,6 +1,6 @@
 import "./Filter.css";
 
-const Filter = () => (
+const Filter = ({ filters, setFilters }) => (
   <div className="flower-filter-container">
     <div className="filter-container">
       <label htmlFor="favourite">Favourite</label>
@@ -12,7 +12,12 @@ const Filter = () => (
     </div>
     <div className="filter-container">
       <label htmlFor="colour">Colour</label>
-      <select name="colour" id="colour" className="form-select">
+      <select
+        name="colour"
+        id="colour"
+        className="form-select"
+        onChange={(e) => setFilters({ ...filters, colour: e.target.value })}
+      >
         <option value="any">Any</option>
         <option value="pink">Pink</option>
         <option value="yellow">Yellow</option>

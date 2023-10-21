@@ -9,6 +9,7 @@ const flowers = [
       alt: "pink dahlia",
     },
     favoured: false,
+    colour: "pink",
   },
   {
     id: 1,
@@ -20,6 +21,7 @@ const flowers = [
       alt: "yellow daisy",
     },
     favoured: true,
+    colour: "yellow",
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ const flowers = [
       alt: "peony",
     },
     favoured: false,
+    colour: "pink",
   },
   {
     id: 3,
@@ -42,6 +45,7 @@ const flowers = [
       alt: "rose",
     },
     favoured: false,
+    colour: "peach",
   },
   {
     id: 4,
@@ -53,6 +57,7 @@ const flowers = [
       alt: "sakura",
     },
     favoured: false,
+    colour: "white",
   },
   {
     id: 5,
@@ -64,6 +69,7 @@ const flowers = [
       alt: "iris",
     },
     favoured: false,
+    colour: "purple",
   },
   {
     id: 6,
@@ -75,6 +81,7 @@ const flowers = [
       alt: "lotus",
     },
     favoured: false,
+    colour: "peach",
   },
   {
     id: 7,
@@ -86,6 +93,7 @@ const flowers = [
       alt: "lily",
     },
     favoured: true,
+    colour: "pink",
   },
 ];
 

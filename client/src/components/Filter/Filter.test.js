@@ -16,8 +16,8 @@ describe("Filter", () => {
     expect(filterElement.value).toBe("not favourite");
   });
 
-  test("should be able to change value of gender select", async () => {
-    render(<Filter />);
+  test("should be able to change value of colour select", async () => {
+    render(<Filter filters={{}} setFilters={() => {}} />);
 
     const filterElement = screen.getByLabelText(/colour/i);
     expect(filterElement.value).toBe("any");
