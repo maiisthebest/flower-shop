@@ -23,9 +23,12 @@ const Flowers = () => {
 
   useEffect(() => {
     let filteredFlowersTemp = [...flowers];
-    filteredFlowersTemp = flowers.filter(
-      (flower) => flower.colour === filters.colour
-    );
+
+    if (filters.colour !== "any") {
+      filteredFlowersTemp = flowers.filter(
+        (flower) => flower.colour === filters.colour
+      );
+    }
 
     setFilteredFlowers(filteredFlowersTemp);
   }, [filters]);
