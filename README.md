@@ -41,5 +41,5 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 
 ## Resources
 
-- [The React Testing Library Bootcamp - The Developer Guide](https://www.udemy.com/course/the-react-testing-library-bootcamp/) is an excellent Udemy course that I highly recommend to anyone wanting to learn more about React Testing Library. Throughout the project, I use a lot of content I learnt from the course!
+- [The React Testing Library Bootcamp - The Developer Guide](https://www.udemy.com/course/the-react-testing-library-bootcamp/) is an excellent Udemy course that I highly recommend to anyone wanting to learn more about React Testing Library. Throughout the project, I have used a lot of the content I learnt from the course!
 - Beautiful photos of flowers were taken from [Unsplash](https://unsplash.com/)
