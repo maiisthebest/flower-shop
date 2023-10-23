@@ -5,6 +5,7 @@ describe("Cards", () => {
   test("should render 2 card components", () => {
     const flowers = [
       {
+        id: 0,
         name: "Pink Dahlia",
         phone: "123-456-789",
         email: "abc@some-email.com",
@@ -15,6 +16,7 @@ describe("Cards", () => {
         favoured: false,
       },
       {
+        id: 1,
         name: "Sunflower",
         phone: "222-333-444",
         email: "def@some-email.com",
