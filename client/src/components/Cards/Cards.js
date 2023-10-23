@@ -1,10 +1,16 @@
 import Card from "../Card/Card";
 import "./Cards.css";
 
-const Cards = ({ flowers }) => {
+const Cards = ({ flowers, setFlowers }) => {
+  const updateFavourite = (index, favoured) => {
+    const updatedFlowers = [...flowers];
+    updatedFlowers[index].favoured = favoured;
+
+    setFlowers(updatedFlowers);
+  };
   return (
     <div className="flower-cards-container">
-      {flowers.map((flower) => (
+      {flowers.map((flower, index) => (
         <Card
           key={flower.id}
           name={flower.name}
@@ -12,6 +18,8 @@ const Cards = ({ flowers }) => {
           email={flower.email}
           image={flower.image}
           favoured={flower.favoured}
+          updateFavourite={updateFavourite}
+          index={index}
         />
       ))}
     </div>

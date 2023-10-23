@@ -4,16 +4,16 @@ import userEvent from "@testing-library/user-event";
 
 describe("Filter", () => {
   test("should be able to change value of favourite select", async () => {
-    render(<Filter />);
+    render(<Filter filters={{}} setFilters={() => {}} />);
 
     const filterElement = screen.getByLabelText(/favourite/i);
     expect(filterElement.value).toBe("any");
 
-    await userEvent.selectOptions(filterElement, "favourite");
-    expect(filterElement.value).toBe("favourite");
+    await userEvent.selectOptions(filterElement, "favoured");
+    expect(filterElement.value).toBe("favoured");
 
-    await userEvent.selectOptions(filterElement, "not favourite");
-    expect(filterElement.value).toBe("not favourite");
+    await userEvent.selectOptions(filterElement, "not favoured");
+    expect(filterElement.value).toBe("not favoured");
   });
 
   test("should be able to change value of colour select", async () => {

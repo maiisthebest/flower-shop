@@ -1,12 +1,12 @@
 const flowers = [
   {
     id: 0,
-    name: "Pink Dahlia",
+    name: "Lily",
     phone: "111111111",
     email: "abc@some-email.com",
     image: {
-      url: "http://pink-dahlia",
-      alt: "pink dahlia",
+      url: "http://pink-lily",
+      alt: "pink lily",
     },
     favoured: false,
     colour: "pink",
@@ -20,7 +20,7 @@ const flowers = [
       url: "http://yellow-daisy",
       alt: "yellow daisy",
     },
-    favoured: true,
+    favoured: false,
     colour: "yellow",
   },
   {
@@ -32,7 +32,7 @@ const flowers = [
       url: "http://pink-rose",
       alt: "pink rose",
     },
-    favoured: true,
+    favoured: false,
     colour: "pink",
   },
 ];

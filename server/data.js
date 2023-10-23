@@ -9,7 +9,7 @@ const flowers = [
       alt: "pink dahlia",
     },
     favoured: false,
-    colour: "pink",
+    colour: "peach",
   },
   {
     id: 1,
@@ -20,7 +20,7 @@ const flowers = [
       url: "https://plus.unsplash.com/premium_photo-1675370791891-b5c58d0bc130?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
       alt: "yellow daisy",
     },
-    favoured: true,
+    favoured: false,
     colour: "yellow",
   },
   {
@@ -92,7 +92,7 @@ const flowers = [
       url: "https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
       alt: "lily",
     },
-    favoured: true,
+    favoured: false,
     colour: "pink",
   },
 ];

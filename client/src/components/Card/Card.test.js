@@ -11,6 +11,8 @@ const cardProps = {
     alt: "altText",
   },
   favoured: false,
+  index: 1,
+  updateFavourite: () => {},
 };
 
 describe("Card", () => {

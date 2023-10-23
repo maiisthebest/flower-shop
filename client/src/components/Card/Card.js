@@ -3,10 +3,19 @@ import heartFilled from "../../svg/heartFilled.svg";
 import heartOutlined from "../../svg/heartOutlined.svg";
 import "./Card.css";
 
-const Card = ({ name, phone, email, image, favoured }) => {
+const Card = ({
+  name,
+  phone,
+  email,
+  image,
+  favoured,
+  index,
+  updateFavourite,
+}) => {
   const [isFavoured, setIsFavoured] = useState(favoured);
 
-  const clickHandler = () => {
+  const toggleFavourite = () => {
+    updateFavourite(index, !isFavoured);
     setIsFavoured(!isFavoured);
   };
 
@@ -14,7 +23,7 @@ const Card = ({ name, phone, email, image, favoured }) => {
     <article className="card">
       <div className="card-header">
         <img src={image.url} alt={image.alt} className="card-img" />
-        <button className="heart" onClick={clickHandler}>
+        <button className="heart" onClick={toggleFavourite}>
           {isFavoured ? (
             <img src={heartFilled} alt="filled heart" />
           ) : (

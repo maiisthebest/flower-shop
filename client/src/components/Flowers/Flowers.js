@@ -6,10 +6,11 @@ import axios from "axios";
 
 const Flowers = () => {
   const [flowers, setFlowers] = useState([]);
+  const [filteredFlowers, setFilteredFlowers] = useState([]);
   const [filters, setFilters] = useState({
     colour: "any",
+    favoured: "any",
   });
-  const [filteredFlowers, setFilteredFlowers] = useState([]);
 
   const fetchFlowers = async () => {
     const response = await axios.get("http://localhost:4000/flowers");
@@ -24,8 +25,15 @@ const Flowers = () => {
   useEffect(() => {
     let filteredFlowersTemp = [...flowers];
 
+    if (filters.favoured !== "any") {
+      filteredFlowersTemp = filteredFlowersTemp.filter(
+        (flower) =>
+          flower.favoured === (filters.favoured === "favoured" ? true : false)
+      );
+    }
+
     if (filters.colour !== "any") {
-      filteredFlowersTemp = flowers.filter(
+      filteredFlowersTemp = filteredFlowersTemp.filter(
         (flower) => flower.colour === filters.colour
       );
     }
@@ -36,8 +44,8 @@ const Flowers = () => {
   return (
     <div className="container">
       <div className="app-container">
-        <Filter setFilters={setFilters} />
-        <Cards flowers={filteredFlowers} />
+        <Filter filters={filters} setFilters={setFilters} />
+        <Cards flowers={filteredFlowers} setFlowers={setFlowers} />
       </div>
     </div>
   );

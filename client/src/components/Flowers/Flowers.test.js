@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import Flowers from "./Flowers";
 import { rest } from "msw";
@@ -65,5 +65,84 @@ describe("Flowers", () => {
     expect(anyCards.length).toBe(3);
 
     expect(anyCards).toStrictEqual([allCards[0], allCards[1], allCards[2]]);
+  });
+
+  test("should filter for favoured flowers", async () => {
+    render(<Flowers />);
+
+    const allCards = await screen.findAllByRole("article");
+    expect(allCards.length).toBe(3);
+
+    await userEvent.click(within(allCards[0]).getByRole("button"));
+    await userEvent.click(within(allCards[2]).getByRole("button"));
+
+    await userEvent.selectOptions(
+      screen.getByLabelText("Favourite"),
+      "favoured"
+    );
+
+    const favouriteCards = await screen.findAllByRole("article");
+    expect(favouriteCards.length).toBe(2);
+
+    expect(favouriteCards).toStrictEqual([allCards[0], allCards[2]]);
+  });
+
+  test("should filter for not favoured flowers", async () => {
+    render(<Flowers />);
+
+    const allCards = await screen.findAllByRole("article");
+    expect(allCards.length).toBe(3);
+
+    await userEvent.click(within(allCards[0]).getByRole("button"));
+
+    await userEvent.selectOptions(
+      screen.getByLabelText("Favourite"),
+      "not favoured"
+    );
+
+    const notFavouredCards = await screen.findAllByRole("article");
+    expect(notFavouredCards.length).toBe(2);
+
+    expect(notFavouredCards).toStrictEqual([allCards[1], allCards[2]]);
+  });
+
+  test("should filter for any favourite flowers", async () => {
+    render(<Flowers />);
+
+    const allCards = await screen.findAllByRole("article");
+    expect(allCards.length).toBe(3);
+
+    // Click to like the first flower
+    await userEvent.click(within(allCards[0]).getByRole("button"));
+
+    await userEvent.selectOptions(screen.getByLabelText("Favourite"), "any");
+
+    const anyCards = await screen.findAllByRole("article");
+    expect(anyCards.length).toBe(3);
+
+    expect(anyCards).toStrictEqual([allCards[0], allCards[1], allCards[2]]);
+  });
+
+  test("should filter for favoured pink flowers", async () => {
+    render(<Flowers />);
+
+    const allCards = await screen.findAllByRole("article");
+    expect(allCards.length).toBe(3);
+
+    // Click to like the first flower which is pink
+    await userEvent.click(within(allCards[0]).getByRole("button"));
+
+    await userEvent.selectOptions(screen.getByLabelText("Colour"), "pink");
+    const pinkCards = await screen.findAllByRole("article");
+    expect(pinkCards.length).toBe(2);
+
+    await userEvent.selectOptions(
+      screen.getByLabelText("Favourite"),
+      "favoured"
+    );
+    const favouredPinkCards = await screen.findAllByRole("article");
+    expect(favouredPinkCards.length).toBe(1);
+
+    expect(favouredPinkCards).toStrictEqual([allCards[0]]);
   });
 });
