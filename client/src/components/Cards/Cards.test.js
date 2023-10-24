@@ -1,3 +1,4 @@
+import { FlowersContext } from "../Flowers/Flowers";
 import Cards from "./Cards";
 import { render, screen } from "@testing-library/react";
 
@@ -27,7 +28,11 @@ describe("Cards", () => {
         favoured: true,
       },
     ];
-    render(<Cards flowers={flowers} />);
+    render(
+      <FlowersContext.Provider value={{ flowers }}>
+        <Cards />
+      </FlowersContext.Provider>
+    );
 
     expect(screen.getAllByRole("article")).toHaveLength(2);
   });

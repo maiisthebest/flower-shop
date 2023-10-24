@@ -1,8 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Cards from "../Cards/Cards";
 import Filter from "../Filter/Filter";
 import "./Flowers.css";
+
+export const FlowersContext = createContext({
+  flowers: [],
+  setFlowers: () => {},
+  filters: {},
+  setFilters: () => {},
+});
 
 const Flowers = () => {
   const [flowers, setFlowers] = useState([]);
@@ -42,8 +49,12 @@ const Flowers = () => {
   return (
     <div className="container">
       <div className="app-container">
-        <Filter filters={filters} setFilters={setFilters} />
-        <Cards flowers={filteredFlowers} setFlowers={setFlowers} />
+        <FlowersContext.Provider
+          value={{ flowers: filteredFlowers, setFlowers, filters, setFilters }}
+        >
+          <Filter />
+          <Cards />
+        </FlowersContext.Provider>
       </div>
     </div>
   );

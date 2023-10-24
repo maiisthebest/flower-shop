@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Card from "./Card";
 import userEvent from "@testing-library/user-event";
+import flowersMock from "../../mocks/flowers";
+import { FlowersContext } from "../Flowers/Flowers";
+import Card from "./Card";
 
 const cardProps = {
   name: "Pink Dahlia",
@@ -12,7 +14,6 @@ const cardProps = {
   },
   favoured: false,
   index: 1,
-  updateFavourite: () => {},
 };
 
 describe("Card", () => {
@@ -64,7 +65,13 @@ describe("Card", () => {
 
   test("should toggle heart status", async () => {
     const user = userEvent.setup();
-    render(<Card {...cardProps} favoured={false} />);
+    render(
+      <FlowersContext.Provider
+        value={{ flowers: flowersMock, setFlowers: () => {} }}
+      >
+        <Card {...cardProps} favoured={false} />
+      </FlowersContext.Provider>
+    );
 
     expect(screen.getByAltText("outlined heart")).toBeInTheDocument();
     expect(screen.queryByAltText("filled heart")).not.toBeInTheDocument();

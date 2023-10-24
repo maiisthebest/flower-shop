@@ -1,13 +1,11 @@
+import { useContext } from "react";
 import Card from "../Card/Card";
+import { FlowersContext } from "../Flowers/Flowers";
 import "./Cards.css";
 
-const Cards = ({ flowers, setFlowers }) => {
-  const updateFavourite = (index, favoured) => {
-    const updatedFlowers = [...flowers];
-    updatedFlowers[index].favoured = favoured;
+const Cards = () => {
+  const { flowers } = useContext(FlowersContext);
 
-    setFlowers(updatedFlowers);
-  };
   return (
     <div className="flower-cards-container">
       {flowers.map((flower, index) => (
@@ -18,7 +16,6 @@ const Cards = ({ flowers, setFlowers }) => {
           email={flower.email}
           image={flower.image}
           favoured={flower.favoured}
-          updateFavourite={updateFavourite}
           index={index}
         />
       ))}
