@@ -20,7 +20,7 @@ const Flowers = () => {
     fetchFlowers();
   }, []);
 
-  function getFilteredFlowers() {
+  const filteredFlowers = (() => {
     let filteredFlowers = [...flowers];
 
     if (filters.favoured !== "any") {
@@ -37,13 +37,13 @@ const Flowers = () => {
     }
 
     return filteredFlowers;
-  }
+  })();
 
   return (
     <div className="container">
       <div className="app-container">
         <Filter filters={filters} setFilters={setFilters} />
-        <Cards flowers={getFilteredFlowers()} setFlowers={setFlowers} />
+        <Cards flowers={filteredFlowers} setFlowers={setFlowers} />
       </div>
     </div>
   );
