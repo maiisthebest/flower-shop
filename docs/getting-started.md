@@ -38,7 +38,7 @@ In summary, React Testing Library is more focused on encouraging user-centric te
 
 On the other hand, Enzyme offers greater flexibility and control over testing details, making it a choice for developers who need to test specific implementation aspects of their components.
 
-The choice between Enzyme and React Testing Library often depends on your project's needs, your testing philosophy, and the level of control you require over the testing process. Personally, I prefer React Testing Library because of its simplicity. It makes my test looks so much cleaner and easier to understand. After all, I'm a simple person!
+The choice between Enzyme and React Testing Library often depends on your project's needs, your testing philosophy, and the level of control you require over the testing process. Personally, I prefer React Testing Library because of its simplicity. It makes my test looks so much cleaner and easier to understand. After all, I'm a simple person 😆
 
 ## Section 2: Getting Started with React Testing Library
 
