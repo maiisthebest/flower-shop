@@ -1,6 +1,6 @@
-import Filter from "./Filter";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import Filter from "./Filter";
 
 describe("Filter", () => {
   test("should be able to change value of favourite select", async () => {

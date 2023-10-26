@@ -1,9 +1,9 @@
 import { render, screen, within } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
-import Flowers from "./Flowers";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import flowersMock from "../../mocks/flowers";
+import Flowers from "./Flowers";
 
 const server = setupServer(
   rest.get("http://localhost:4000/flowers", (req, res, ctx) =>
