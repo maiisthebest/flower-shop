@@ -38,6 +38,6 @@ Below is the component structure of the app.
 - Typically, the `Card` component includes a single flower card.
 - This card is then wrapped inside a collection of `Cards`
 - `Filter` component includes the two dropdown lists that allow the user to select different filtering options.
-- Wrapping both `Filter` and `Cards` is the overarching `Flowers` component. I refer to this component as the parent component of `Filter` and `Cards` because it has the responsibility of liaising or connecting the two components e.g. The user selects to filter by favourite, the cards should be updated accordingly.
+- Wrapping both `Filter` and `Cards` is the overarching `Flowers` component. I refer to this component as the parent component of `Filter` and `Cards` because it has the responsibility of liaising or connecting the two components e.g. The user selects to filter by favourite, the cards should be updated accordingly. This is also the place where we should write **Integration Tests** to verify the integration between `Filter` and `Cards` are working properly.
 
 ![Structure of the React components](../client/componentStructure.png "Structure of the React components")
