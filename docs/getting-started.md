@@ -45,7 +45,7 @@ The choice between Enzyme and React Testing Library often depends on your projec
 
 Before we can start reaping the benefits of React Testing Library, we need to set up our testing environment. Luckily, the process is pretty straightforward. Here's a basic overview of the steps involved:
 
-1. **Create a new React project**: If you don't have an existing project, you can create one using one of the [recommended production-grade frameworks](https://react.dev/learn/start-a-new-react-project#production-grade-react-frameworks). Note: In my **Flower Shop App** I had used **Create React App** (`npx create-react-app some-app`) however my dear colleague **_Anthony Simmons_** pointed me that this was not production-grade 😣
+1. **Create a new React project**: If you don't have an existing project, you can create using one of the [recommended production-grade frameworks](https://react.dev/learn/start-a-new-react-project#production-grade-react-frameworks). Note: In my **Flower Shop App** I had used **Create React App** (`npx create-react-app some-app`) however my dear colleague **_Anthony Simmons_** pointed me that this was not production-grade 😣
 1. **Install dependencies**: To use React Testing Library, you need to install the required dependencies. These typically include `@testing-library/react` and `@testing-library/jest-dom`. Ensure you have `Jest` installed as well, as it serves as the testing framework. Refer to this [package.json](../client/package.json).
 1. **Write your first test**: With the setup in place, you're ready to write your first test using React Testing Library. Woo!!!
 
