@@ -12,14 +12,23 @@ This project centers around a simple flower shop, where visitors can explore a w
 
 This project serves as a simple hands-on experience for React testing novices. By working on this Flower Shop app, you'll gain practical insights into testing React components effectively, ensuring your applications are robust and bug-free. As a bonus, since I'm a big fan of test-driven development (TDD), you will learn firsthand experience using TDD too (woo!).
 
+## Architecture of the Flower Shop App
+
+The architecture is pretty simple. The app is composed of:
+
+- The Flower Shop front end
+- The Flower Shop BFF (a simplified version) which returns mocked data for flowers in json format
+
+![Architecture of the Flower Shop App](./flowerShopArchitecture.JPG "Architecture of the Flower Shop App")
+
 ## Getting started
 
 To get started with this project, follow these simple steps:
 
 1. Clone this repository to your local machine
-1. Install the required dependencies using `npm install`
-1. Run the app using `npm start`
-1. Start exploring and testing the app as you follow along with the guide. List of available scripts are detailed in the next section.
+1. Navigate to `/server` and follow the [server's ReadMe](./server/README.md) to start the back end.
+1. Navigate to `/client` and follow the [client's ReadMe](./client/README.md) to start the front end.
+1. Start exploring and testing the app as you follow along with the [Getting Started guide](./docs/getting-started.md). List of available scripts are detailed in the next section.
 
 I hope you find this project enjoyable and educational. Happy coding!
 
