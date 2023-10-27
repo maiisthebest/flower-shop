@@ -24,12 +24,13 @@ describe("Flowers", () => {
   });
 
   test("should filter for pink flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
-    await userEvent.selectOptions(screen.getByLabelText("Colour"), "Pink");
+    await user.selectOptions(screen.getByLabelText("Colour"), "Pink");
 
     const pinkCards = await screen.findAllByRole("article");
     expect(pinkCards.length).toBe(2);
@@ -39,12 +40,13 @@ describe("Flowers", () => {
   });
 
   test("should filter for yellow flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
-    await userEvent.selectOptions(screen.getByLabelText("Colour"), "Yellow");
+    await user.selectOptions(screen.getByLabelText("Colour"), "Yellow");
 
     const pinkCards = await screen.findAllByRole("article");
     expect(pinkCards.length).toBe(1);
@@ -54,12 +56,13 @@ describe("Flowers", () => {
   });
 
   test("should filter for any flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
-    await userEvent.selectOptions(screen.getByLabelText("Colour"), "Any");
+    await user.selectOptions(screen.getByLabelText("Colour"), "Any");
 
     const anyCards = await screen.findAllByRole("article");
     expect(anyCards.length).toBe(3);
@@ -68,18 +71,16 @@ describe("Flowers", () => {
   });
 
   test("should filter for favoured flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
-    await userEvent.click(within(allCards[0]).getByRole("button"));
-    await userEvent.click(within(allCards[2]).getByRole("button"));
+    await user.click(within(allCards[0]).getByRole("button"));
+    await user.click(within(allCards[2]).getByRole("button"));
 
-    await userEvent.selectOptions(
-      screen.getByLabelText("Favourite"),
-      "favoured"
-    );
+    await user.selectOptions(screen.getByLabelText("Favourite"), "favoured");
 
     const favouriteCards = await screen.findAllByRole("article");
     expect(favouriteCards.length).toBe(2);
@@ -88,14 +89,15 @@ describe("Flowers", () => {
   });
 
   test("should filter for not favoured flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
-    await userEvent.click(within(allCards[0]).getByRole("button"));
+    await user.click(within(allCards[0]).getByRole("button"));
 
-    await userEvent.selectOptions(
+    await user.selectOptions(
       screen.getByLabelText("Favourite"),
       "not favoured"
     );
@@ -107,15 +109,16 @@ describe("Flowers", () => {
   });
 
   test("should filter for any favourite flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
     // Click to like the first flower
-    await userEvent.click(within(allCards[0]).getByRole("button"));
+    await user.click(within(allCards[0]).getByRole("button"));
 
-    await userEvent.selectOptions(screen.getByLabelText("Favourite"), "any");
+    await user.selectOptions(screen.getByLabelText("Favourite"), "any");
 
     const anyCards = await screen.findAllByRole("article");
     expect(anyCards.length).toBe(3);
@@ -124,22 +127,20 @@ describe("Flowers", () => {
   });
 
   test("should filter for favoured pink flowers", async () => {
+    const user = userEvent.setup();
     render(<Flowers />);
 
     const allCards = await screen.findAllByRole("article");
     expect(allCards.length).toBe(3);
 
     // Click to like the first flower which is pink
-    await userEvent.click(within(allCards[0]).getByRole("button"));
+    await user.click(within(allCards[0]).getByRole("button"));
 
-    await userEvent.selectOptions(screen.getByLabelText("Colour"), "pink");
+    await user.selectOptions(screen.getByLabelText("Colour"), "pink");
     const pinkCards = await screen.findAllByRole("article");
     expect(pinkCards.length).toBe(2);
 
-    await userEvent.selectOptions(
-      screen.getByLabelText("Favourite"),
-      "favoured"
-    );
+    await user.selectOptions(screen.getByLabelText("Favourite"), "favoured");
     const favouredPinkCards = await screen.findAllByRole("article");
     expect(favouredPinkCards.length).toBe(1);
 
