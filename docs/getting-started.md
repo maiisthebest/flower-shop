@@ -6,9 +6,9 @@ Welcome to this **beginner's guide to React testing** using [React Testing Libra
 
 In the realm of web development, testing is not just a good practice that is typically overlooked - **_it's an essential requirement_**. It ensures the reliability and stability of your applications and helps you catch issues early in the development process.
 
-I've chosen to spotlight React Testing Library because of its widespread popularity and its unique approach to testing, which places a strong emphasis on **writing tests from the user's perspective**. Having worked on various React projects in the past few years, I've often found a lack of concise and straightforward guides for using React Testing Library that can be easily digested in a short amount of time. That's why I created the Flower Shop app and wrote this article.
+I've chosen to spotlight React Testing Library because of its widespread popularity and its unique approach to testing, which places a strong emphasis on **writing tests from the user's perspective**. Having worked on various React projects in the past few years as a Developer Consultant, I've often found a lack of concise and straightforward guides for using React Testing Library that can be easly digested in a short amount of time. That's why I created the Flower Shop App and wrote this article 💕
 
-In this guide, I have organised the content in four sections:
+In this guide, I have organised the content in three sections:
 
 - Section 1: Introduction to React Testing Library
 - Section 2: Getting started with React Testing Library
@@ -41,13 +41,13 @@ The choice between Enzyme and React Testing Library often depends on your projec
 
 ## Section 2: Getting started with React Testing Library
 
-### Basic setup for testing with React Testing Library
+### Basic setup
 
 Before we can start reaping the benefits of React Testing Library, we need to set up our testing environment. Luckily, the process is pretty straightforward. Here's a basic overview of the steps involved:
 
-1. **Create a new React project**: If you don't have an existing project, you can create using one of the [recommended production-grade frameworks](https://react.dev/learn/start-a-new-react-project#production-grade-react-frameworks). Note: In my **Flower Shop App** I had used **Create React App** (`npx create-react-app some-app`) however my dear colleague **_Anthony Simmons_** pointed me that this was not production-grade 😣
+1. **Create a new React project**: If you don't have an existing project, you can create using one of the [recommended production-grade frameworks](https://react.dev/learn/start-a-new-react-project#production-grade-react-frameworks). Note: In my **Flower Shop App** I had used **Create React App** (`npx create-react-app some-app`) however my dear colleague **_Anthony Simmons_** pointed out to me that this was not production-grade 😣
 1. **Install dependencies**: To use React Testing Library, you need to install the required dependencies. These typically include `@testing-library/react` and `@testing-library/jest-dom`. Ensure you have `Jest` installed as well, as it serves as the testing framework. Refer to this [package.json](../client/package.json).
-1. **Write your first test**: With the setup in place, you're ready to write your first test using React Testing Library. Woo!!!
+1. **Write your first test**: With the setup in place, you're ready to write your first test using React Testing Library. Woo 🎊
 
 ### Why the use of Jest as the testing framework?
 
@@ -57,28 +57,25 @@ Jest is a widely adopted JavaScript testing framework that pairs seamlessly with
 
 I found this website to be helpful in listing the common [Jest assertions](https://learntechsystems.com/assertions-in-react-testing-library/) that are often used.
 
-In the next sections, we'll explore how to write tests with React Testing Library and leverage the power of Jest for efficient and comprehensive testing.
-
 ### Write your first test
 
-Let's start with the basics. When writing tests with React Testing Library, simplicity is the guiding principle. We aim to keep our tests concise, easy to read, and, most importantly, reflective of how a user interacts with our components.
+Let's start with the basics. When writing tests with React Testing Library, simplicity is the guiding principle. We aim to keep our tests concise, easy to read, and, most importantly, reflective of how a user interacts with our components. **Think like a user** 😉
 
-**Example: Testing the Card Component using queries** ([full code](../client/src/components/Card/Card.js))
+**Example: Testing the Card component using queries** ([full code](../client/src/components/Card/Card.test.js))
 
-```javascript:
+```javascript
 import { render, screen } from "@testing-library/react";
 import Card from "./Card";
 
 test("should show name of flower", () => {
-    const name = "Pink Dahlia";
-    render(<Card {...cardProps} name={name} />);
+  const name = "Pink Dahlia";
+  render(<Card {...cardProps} name={name} />);
 
-    expect(screen.getByRole("heading", { name: name })).toBeInTheDocument();
-  });
-
+  expect(screen.getByRole("heading", { name: name })).toBeInTheDocument();
+});
 ```
 
-In this example, we're testing a simple Card component. We render the `Card` then assert the heading of the Card is in the DOM using `screen.getByRole()`. This is one of the query methods that React Testing Library provides to select elements in your components.
+In this example, we're testing a simple `Card` component. We render the `Card` then assert the heading of the Card is in the DOM using `screen.getByRole("heading", { name: name })`. This is one of the query methods that React Testing Library provides to select elements in your components.
 
 ### Querying elements
 
@@ -93,7 +90,7 @@ Here are a few essential query methods:
 
 See the [priority guide](https://testing-library.com/docs/queries/about/#priority) for recommendations on how to make use of **semantic queries** to test your page in the most accessible way.
 
-Typically, after selecting an element using queries, you can simulate user interactions with the page using `user-event` (which is explained in next section), or use `Jest` to make assertions about the element.
+Typically, after selecting an element using queries, you can simulate user interactions with the page using `user-event` (which is explained in the next section), or use `Jest` to make assertions about the element.
 
 ### Simulating user interactions
 
@@ -107,27 +104,50 @@ Here are a few essential user events:
 - `type`: type a text into an element
 - `tab`: tab to next element
 
-**Example: Testing the Card Component by clicking a button** ([full code](../client/src/components/Card/Card.js))
+**Example: Testing the Card component by clicking a button** ([full code](../client/src/components/Card/Card.test.js))
 
-```javascript:
+```javascript
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Card from "./Card";
 
 test("should toggle heart status", async () => {
-    const user = userEvent.setup();
-    render(<Card {...cardProps} favoured={false} />);
+  const user = userEvent.setup();
+  render(<Card {...cardProps} favoured={false} />);
 
-    const buttonElement = screen.getByRole("button");
-    await user.click(buttonElement);
+  const buttonElement = screen.getByRole("button");
+  await user.click(buttonElement);
 
-    expect(await screen.findByAltText("filled heart")).toBeInTheDocument();
-    expect(screen.queryByAltText("outlined heart")).not.toBeInTheDocument();
-
-  });
+  expect(await screen.findByAltText("filled heart")).toBeInTheDocument();
+  expect(screen.queryByAltText("outlined heart")).not.toBeInTheDocument();
+});
 ```
 
-In this example, we render a Card component with the initial `favoured` value of `false` (meaning not favoured) and use `screen.getByRole()` to find the `like` button and click it. This simulates the user clicking to like the Card. It then verifies the component correctly reflects the user's input by displaying the filled heart image. It then also verifies that the outlined heart (meaning not favoured) is not visible using `screen.queryByAltText()`.
+In this example, we render a `Card` component with the initial `favoured` value of `false` (meaning not favoured) and use `screen.getByRole("button")` to find the button and click it. This simulates the user clicking to like the `Card`. In this example, there is only one button in the `Card` component. It then verifies the component correctly reflects the user's input by displaying the filled heart image. It then also verifies that the outlined heart (meaning not favoured) is not visible using `screen.queryByAltText()`.
+
+**Example: Testing the Filter component by selecting from the dropdown list** ([full code](../client/src/components/Filter/Filter.test.js))
+
+```javascript
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Filter from "./Filter";
+
+test("should be able to change value of favourite select", async () => {
+  const user = userEvent.setup();
+  render(<Filter filters={{}} setFilters={() => {}} />);
+
+  const filterElement = screen.getByLabelText(/favourite/i);
+  expect(filterElement.value).toBe("any");
+
+  await user.selectOptions(filterElement, "favoured");
+  expect(filterElement.value).toBe("favoured");
+
+  await user.selectOptions(filterElement, "not favoured");
+  expect(filterElement.value).toBe("not favoured");
+});
+```
+
+In this example, we render a `Filter` component and use `screen.getByLabelText(/favourite/i)` to find the dropdown list via its accessible label and asserts the initial value is `any`. We then use `userEvent.selectOptions(filterElement, "favoured")` to select `favoured` from the dropdown list. This simulates the user clicking the dropdown list and select `favoured`. It then verifies the value selected is `favoured`. Then we do the same by selecting `not favoured` and assert the value is correctly displayed as `not favoured`.
 
 ## Section 3: Best practices for testing with React Testing Library
 
@@ -157,7 +177,7 @@ Maintainability is a critical aspect of test writing. Well-maintained tests rema
 
 By following these best practices, you can ensure that your tests are effective, maintainable, and provide a solid safety net for your React applications 😁
 
-In the next part, we'll delve into more advanced testing scenarios and strategies that will enhance your testing skills further including mock network calls and integration testing.
+In the next part, we'll delve into more advanced testing scenarios and strategies that will enhance your testing skills further including **mock network calls** and **integration testing**.
 
 ## Resources
 
