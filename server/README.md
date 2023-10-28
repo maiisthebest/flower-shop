@@ -1,4 +1,4 @@
-# The Flower App Server
+# The Flower Shop App Server
 
 This is the server of the Flower Shop App which is written in NodeJs. This server is super simple and only serves to demonstrate how the front end can talk to the back end to retrieve data for the flowers. The setup and talking to the database is out of scope so mock data for the flowers was used in the form of json.
 

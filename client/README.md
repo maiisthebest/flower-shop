@@ -1,4 +1,4 @@
-# The Flower App Client
+# The Flower Shop App Client
 
 This is the front end of the Flower Shop App which is written in React.
 
