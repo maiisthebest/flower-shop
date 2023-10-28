@@ -10,7 +10,7 @@ This project centers around a simple flower shop, where visitors can explore a w
 - Show your appreciation for the flowers by liking them
 - Easily filter through the flower inventory
 
-This project serves as a simple hands-on experience for React testing novices. By working on this Flower Shop app, you'll gain practical insights into testing React components effectively, ensuring your applications are robust and bug-free. As a bonus, since I'm a big fan of test-driven development (TDD), you will learn firsthand experience using TDD too (woo!).
+This project serves as a simple hands-on experience for React testing novices. By working on this Flower Shop app, you'll gain practical insights into testing React components effectively, ensuring your applications are robust and bug-free. As a bonus, since I'm a big fan of test-driven development (TDD), you will learn firsthand experience using TDD too (woo 😉)
 
 ## Architecture of the Flower Shop App
 
@@ -28,25 +28,9 @@ To get started with this project, follow these simple steps:
 1. Clone this repository to your local machine
 1. Navigate to `/server` and follow the [server's ReadMe](./server/README.md) to start the back end.
 1. Navigate to `/client` and follow the [client's ReadMe](./client/README.md) to start the front end.
-1. Start exploring and testing the app as you follow along with the [Getting Started guide](./docs/getting-started.md). List of available scripts are detailed in the next section.
+1. Start exploring and testing the app as you follow along with the [Getting Started Guide](./docs/getting-started.md).
 
 I hope you find this project enjoyable and educational. Happy coding!
-
-## Available scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. The app is now ready to be deployed!
 
 ## Resources
 

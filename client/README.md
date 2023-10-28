@@ -1,21 +1,12 @@
 # The Flower App Client
 
-To be filled later.
+This is the front end of the Flower Shop App which is written in React.
 
-## Getting started
-
-To get started with this project, follow these simple steps:
-
-1. Clone this repository to your local machine
-1. Install the required dependencies using `npm install`
-1. Run the app using `npm start`
-1. Start exploring and testing the app as you follow along with the guide. List of available scripts are detailed in the next section.
-
-I hope you find this project enjoyable and educational. Happy coding!
+For instructions on how to setup React Testing Library and write tests check out the [Getting Started Guide](../docs/getting-started.md).
 
 ## Available scripts
 
-In the project directory, you can run:
+In the current directory, you can run:
 
 ### `npm start`
 
