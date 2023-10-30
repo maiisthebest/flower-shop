@@ -104,6 +104,8 @@ Here are a few essential user events:
 - `type`: type a text into an element
 - `tab`: tab to next element
 
+Before you can simulate user interactions, you need to import `@testing-library/user-event` to your test file. From `user-event@14` it's recommended to invoke [`userEvent.setup()`](https://testing-library.com/docs/user-event/setup) before the component is rendered. This can be done in the test itself, or by using a setup function. In the following example, setup is done as part of the test itself for simplicity.
+
 **Example: Testing the Card component by clicking a button** ([full code](../client/src/components/Card/Card.test.js))
 
 ```javascript
@@ -124,6 +126,8 @@ test("should toggle heart status", async () => {
 ```
 
 In this example, we render a `Card` component with the initial `favoured` value of `false` (meaning not favoured) and use `screen.getByRole("button")` to find the button and click it. This simulates the user clicking to like the `Card`. In this example, there is only one button in the `Card` component. It then verifies the component correctly reflects the user's input by displaying the filled heart image. It then also verifies that the outlined heart (meaning not favoured) is not visible using `screen.queryByAltText()`.
+
+Note the use of `await` in front of `user.selectOptions()`. For `user-event@14` we should use `await` because `userEvent` is async. When dealing with asynchronous behaviour such as data fetching or animations, you may want to wait for specific changes in your component's state or UI before making assertions ([resource](https://testing-library.com/docs/user-event/intro/)).
 
 **Example: Testing the Filter component by selecting from the dropdown list** ([full code](../client/src/components/Filter/Filter.test.js))
 
@@ -177,7 +181,7 @@ Maintainability is a critical aspect of test writing. Well-maintained tests rema
 
 By following these best practices, you can ensure that your tests are effective, maintainable, and provide a solid safety net for your React applications 😁
 
-In the next part, we'll delve into more advanced testing scenarios and strategies that will enhance your testing skills further including **mock network calls** and **integration testing**.
+In the next part (coming soon!), we'll delve into more advanced testing scenarios and strategies that will enhance your testing skills further including **mock network calls**, **integration testing**, **hooks**, and [React Queries](https://tanstack.com/query/latest).
 
 ## Resources
 
