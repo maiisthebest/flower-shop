@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100%;    
+  width: 300px;         
+  height: auto;        
+  border-radius: 10px;  
+  object-fit: cover;    /* Optional: ensures the image fills the container nicely */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
+}
