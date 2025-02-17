@@ -29,8 +29,9 @@ jobs:
       - name: Initialize Elastic Beanstalk (if not already set up)
         working-directory: flower-shop-api
         run: |
-          if ! eb status 2>/dev/null; then
+          if ! eb status flower-shop-api-env 2>/dev/null; then
             eb init -p "Ruby" flower-shop-api --region ap-southeast-2  
+            eb use flower-shop-api-env
           fi
 
       - name: Deploy to Elastic Beanstalk
