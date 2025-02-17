@@ -26,6 +26,14 @@ jobs:
           pip install --upgrade awsebcli
           eb --version
 
-      - name: Deploy to Elastic Beanstalk
+      - name: Initialize Elastic Beanstalk (if not already set up)
+        working-directory: flower-shop-api
         run: |
-          eb deploy ${{ secrets.EB_ENVIRONMENT_NAME }}
+          if ! eb status 2>/dev/null; then
+            eb init -p "Ruby" flower-shop-api --region ap-southeast-2  
+          fi
+
+      - name: Deploy to Elastic Beanstalk
+        working-directory: flower-shop-api
+        run: |
+          eb deploy
