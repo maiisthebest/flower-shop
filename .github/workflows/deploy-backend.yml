@@ -39,4 +39,4 @@ jobs:
         env:
           SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         run: |
-          eb deploy
+          eb deploy flower-shop-api-env
