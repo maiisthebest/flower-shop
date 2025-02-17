@@ -4,7 +4,8 @@ import Product from "./components/Product";
 import axios from "axios";
 import { ProductType } from "./types/ProductType";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL; //"http://localhost:3000";
+const API_BASE_URL =
+	"http://flower-shop-api-env.eba-ebqmjpmh.ap-southeast-2.elasticbeanstalk.com"; // import.meta.env.VITE_API_URL; //"http://localhost:3000";
 
 const App = () => {
 	const [product, setProduct] = useState<ProductType | null>(null);
