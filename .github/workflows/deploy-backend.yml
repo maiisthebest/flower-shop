@@ -21,6 +21,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
 
+      - name: Set Environment Variables in Elastic Beanstalk
+        working-directory: flower-shop-api
+        run: |
+          eb setenv SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }}
+
       - name: Install Elastic Beanstalk CLI
         run: |
           pip install --upgrade awsebcli
