@@ -1,0 +1,10 @@
+global:
+  application_name: flower-shop-api
+  default_region: ap-southeast-2
+  environment_name: flower-shop-api-env
+
+environment-defaults:
+  flower-shop-api-env:
+    option_settings:
+      aws:elasticbeanstalk:container: ruby:
+        RubyVersion: 3.3
