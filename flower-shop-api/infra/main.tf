@@ -20,7 +20,7 @@ resource "aws_elastic_beanstalk_application" "api_app" {
 resource "aws_elastic_beanstalk_environment" "api_env" {
   name                = "flower-shop-api-env"
   application         = aws_elastic_beanstalk_application.api_app.name
-  solution_stack_name = "64bit Amazon Linux 2023 v4.3.1 running Ruby 3.2"
+  solution_stack_name = "64bit Amazon Linux 2023 v4.3.1 running Ruby 3.3"
 
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
@@ -31,7 +31,7 @@ resource "aws_elastic_beanstalk_environment" "api_env" {
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "InstanceType"
-    value     = "t3.micro"
+    value     = "t3.small"
   }
 
   setting {
@@ -44,6 +44,12 @@ resource "aws_elastic_beanstalk_environment" "api_env" {
     namespace = "aws:elasticbeanstalk:application:environment"
     name      = "RAILS_ENV"
     value     = "production"
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application"
+    name      = "Application Healthcheck URL"
+    value     = "/up"
   }
 }
 
