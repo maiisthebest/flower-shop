@@ -33,12 +33,9 @@ jobs:
             eb init -p "Ruby" flower-shop-api --region ap-southeast-2  
           fi
 
-      - name: Set Environment Variables in Elastic Beanstalk
-        working-directory: flower-shop-api
-        run: |
-          eb setenv SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }}
-
       - name: Deploy to Elastic Beanstalk
         working-directory: flower-shop-api
+        env:
+          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         run: |
           eb deploy
