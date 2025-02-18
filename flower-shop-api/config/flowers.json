@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Pink Dahlia",
+      "imageUrl": "https://images.unsplash.com/photo-1546842931-886c185b4c8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80",
+      "price": 5.00
+    },
+    {
+      "name": "Yellow Daisy",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1675370791891-b5c58d0bc130?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 7.50
+    },
+    {
+      "name": "Peony",
+      "imageUrl": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 10.00
+    },
+    {
+      "name": "Rose",
+      "imageUrl": "https://images.unsplash.com/photo-1455582916367-25f75bfc6710?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 12.50
+    },
+    {
+      "name": "Sakura",
+      "imageUrl": "https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zmxvd2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      "price": 15.00
+    },
+    {
+      "name": "Iris",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1675438347170-67e2d364363d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 17.50
+    },
+    {
+      "name": "Lotus",
+      "imageUrl": "https://images.unsplash.com/photo-1499117901949-e34ef1b2444a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 20.00
+    },
+    {
+      "name": "Lily",
+      "imageUrl": "https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 22.50
+    }
+  ]
+  
