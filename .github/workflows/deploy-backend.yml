@@ -20,6 +20,22 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Set up Ruby and Bundler
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true
+
+      - name: Install Dependencies (Backend)
+        working-directory: flower-shop-api
+        run: |
+          bundle install
+
+      - name: Run Backend Tests (RSpec)
+        working-directory: flower-shop-api
+        run: |
+          bundle exec rspec
+
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v2
         with:
