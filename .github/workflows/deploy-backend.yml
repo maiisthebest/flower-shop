@@ -40,6 +40,13 @@ jobs:
             eb use $EB_ENV
           fi
 
+      - name: Create env.config for Elastic Beanstalk
+        run: |
+          mkdir -p .ebextensions
+          echo "option_settings:" > .ebextensions/env.config
+          echo "  aws:elasticbeanstalk:application:environment:" >> .ebextensions/env.config
+          echo "    SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}" >> .ebextensions/env.config
+
       - name: Deploy to Elastic Beanstalk
         working-directory: flower-shop-api
         env:
