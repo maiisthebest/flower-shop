@@ -6,7 +6,7 @@ interface ProductProps {
 
 const Product = ({ product }: ProductProps) => {
 	return (
-		<div>
+		<div className="product-card">
 			<h2>{product.name}</h2>
 			<img src={product.imageUrl} className="product-image" />
 			<p>Price: ${product.price.toFixed(2)}</p>

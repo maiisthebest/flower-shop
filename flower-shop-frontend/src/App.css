@@ -5,11 +5,15 @@
   text-align: center;
 }
 
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .product-image {
-  max-width: 100%;    
-  width: 300px;         
-  height: auto;        
+  width: 16rem;
+  height: 22.5rem;
+  margin: 2rem;
   border-radius: 10px;  
-  object-fit: cover;    /* Optional: ensures the image fills the container nicely */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.486);
 }

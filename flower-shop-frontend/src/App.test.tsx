@@ -10,13 +10,15 @@ describe("App", () => {
 		vi.resetAllMocks();
 	});
 
-	it("renders the product after fetching data", async () => {
+	it("renders the list of products after fetching data", async () => {
 		(axios.get as jest.Mock).mockResolvedValueOnce({
-			data: {
-				name: "Orchid",
-				imageUrl: "https://abcde.com/orchid.jpg",
-				price: 29.99,
-			},
+			data: [
+				{
+					name: "Orchid",
+					imageUrl: "https://abcde.com/orchid.jpg",
+					price: 29.99,
+				},
+			],
 		});
 
 		render(<App />);

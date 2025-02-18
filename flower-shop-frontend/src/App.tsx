@@ -7,19 +7,23 @@ import { ProductType } from "./types/ProductType";
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const App = () => {
-	const [product, setProduct] = useState<ProductType | null>(null);
+	const [products, setProducts] = useState<ProductType[]>([]);
 
 	useEffect(() => {
 		axios
 			.get(`${API_BASE_URL}/products/show`)
-			.then((response) => setProduct(response.data))
+			.then((response) => setProducts(response.data))
 			.catch((error) => console.log("Error fetching product: ", error));
 	}, []);
 	return (
-		<div>
+		<>
 			<h1>Welcome to Flower Shop</h1>
-			{product ? <Product product={product} /> : <p>Loading...</p>}
-		</div>
+			<div className="product-list">
+				{products.map((product, index) => (
+					<Product product={product} key={index} />
+				))}
+			</div>
+		</>
 	);
 };
 
