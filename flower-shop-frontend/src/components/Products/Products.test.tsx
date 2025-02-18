@@ -1,16 +1,16 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import axios from "axios";
-import App from "./App";
+import Products from "./Products";
 
 vi.mock("axios");
 
-describe("App", () => {
+describe("Products", () => {
 	beforeEach(() => {
 		vi.resetAllMocks();
 	});
 
-	it("renders the list of products after fetching data", async () => {
+	it("renders the list of products", async () => {
 		(axios.get as jest.Mock).mockResolvedValueOnce({
 			data: [
 				{
@@ -21,7 +21,7 @@ describe("App", () => {
 			],
 		});
 
-		render(<App />);
+		render(<Products />);
 
 		await waitFor(() => {
 			expect(screen.getByText("Orchid")).toBeInTheDocument();

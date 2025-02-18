@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Product from "./Product";
-import { ProductType } from "../types/ProductType";
+import { ProductType } from "../../types/ProductType";
 
 describe("Product", () => {
 	it("renders product details correctly", () => {

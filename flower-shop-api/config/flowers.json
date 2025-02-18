@@ -5,11 +5,6 @@
       "price": 5.00
     },
     {
-      "name": "Yellow Daisy",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1675370791891-b5c58d0bc130?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      "price": 7.50
-    },
-    {
       "name": "Peony",
       "imageUrl": "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "price": 10.00
@@ -38,6 +33,16 @@
       "name": "Lily",
       "imageUrl": "https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "price": 22.50
+    },
+    {
+      "name": "Sunflower",
+      "imageUrl": "https://images.unsplash.com/photo-1564826998072-97e2957ad5df?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 25.99
+    },
+    {
+      "name": "Yellow Daisy",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1675370791891-b5c58d0bc130?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "price": 7.50
     }
   ]
   
