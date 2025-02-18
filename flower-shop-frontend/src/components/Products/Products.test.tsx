@@ -25,7 +25,7 @@ describe("Products", () => {
 
 		await waitFor(() => {
 			expect(screen.getByText("Orchid")).toBeInTheDocument();
-			expect(screen.getByText("Price: $29.99")).toBeInTheDocument();
+			expect(screen.getByText("$29.99")).toBeInTheDocument();
 			expect(screen.getByRole("img")).toHaveAttribute(
 				"src",
 				"https://abcde.com/orchid.jpg"

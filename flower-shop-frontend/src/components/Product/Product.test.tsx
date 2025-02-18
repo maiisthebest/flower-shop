@@ -18,6 +18,6 @@ describe("Product", () => {
 			"src",
 			"https://abcxyz.com/rose.jpg"
 		);
-		expect(screen.getByText("Price: $10.99")).toBeInTheDocument();
+		expect(screen.getByText("$10.99")).toBeInTheDocument();
 	});
 });
