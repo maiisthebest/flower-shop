@@ -29,7 +29,12 @@ jobs:
 
       - name: Install dependencies
         working-directory: flower-shop-frontend
-        run: npm run build
+        run: npm install
+
+      - name: Run Frontend Tests (Vitest)
+        working-directory: flower-shop-frontend
+        run: |
+          npm test
 
       - name: Build frontend
         working-directory: flower-shop-frontend
