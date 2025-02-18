@@ -10,6 +10,9 @@ jobs:
     name: Deploy to Elastic Beanstalk
     runs-on: ubuntu-latest
 
+    env:
+      EB_ENV: flower-shop-api-env
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -29,9 +32,9 @@ jobs:
       - name: Initialize Elastic Beanstalk (if not already set up)
         working-directory: flower-shop-api
         run: |
-          if ! eb status flower-shop-api-env 2>/dev/null; then
+          if ! eb status $EB_ENV 2>/dev/null; then
             eb init -p "Ruby" flower-shop-api --region ap-southeast-2  
-            eb use flower-shop-api-env
+            eb use $EB_ENV
           fi
 
       - name: Deploy to Elastic Beanstalk
@@ -39,4 +42,4 @@ jobs:
         env:
           SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         run: |
-          eb deploy flower-shop-api-env
+          eb deploy $EB_ENV
