@@ -40,14 +40,7 @@ jobs:
             eb use $EB_ENV
           fi
 
-      - name: Set SECRET_KEY_BASE in Elastic Beanstalk
-        working-directory: flower-shop-api
-        run: |
-          eb setenv SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }}
-
       - name: Deploy to Elastic Beanstalk
         working-directory: flower-shop-api
-        env:
-          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         run: |
           eb deploy $EB_ENV

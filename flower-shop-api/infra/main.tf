@@ -1,15 +1,15 @@
 terraform {
-     required_providers {
-      aws = {
+  required_providers {
+    aws = {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
   }
   backend "s3" {
-    bucket         = "flower-shop-api-terraform-state"
-    key            = "flower-shop-api/terraform.tfstate"
-    region         = "ap-southeast-2"
-    encrypt        = true
+    bucket  = "flower-shop-api-terraform-state"
+    key     = "flower-shop-api/terraform.tfstate"
+    region  = "ap-southeast-2"
+    encrypt = true
   }
 }
 
@@ -23,11 +23,16 @@ resource "aws_elastic_beanstalk_environment" "api_env" {
   solution_stack_name = "64bit Amazon Linux 2023 v4.3.1 running Ruby 3.3"
 
   setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "SECRET_KEY_BASE"
+    value     = var.secret_key_base
+  }
+  setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "IamInstanceProfile"
     value     = aws_iam_instance_profile.elasticbeanstalk_ec2_profile.name
   }
-  
+
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "InstanceType"
