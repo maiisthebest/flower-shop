@@ -1,12 +1,14 @@
+branch-defaults:
+  default:
+    environment: flower-shop-api-env
+environment-defaults:
+  flower-shop-api-env:
+    option_settings:
+      aws:elasticbeanstalk:container:ruby:
+        RubyVersion: '3.3'
+      aws:elasticbeanstalk:environment:
+        EnvironmentType: SingleInstance
 global:
   application_name: flower-shop-api
   default_region: ap-southeast-2
   environment_name: flower-shop-api-env
-
-environment-defaults:
-  flower-shop-api-env:
-    option_settings:
-      aws:elasticbeanstalk:environment:
-        EnvironmentType: "SingleInstance"
-      aws:elasticbeanstalk:container:ruby:
-        RubyVersion: "3.3"
