@@ -1,24 +1,58 @@
-# README
+# Flower Shop API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend API for the Flower Shop web application. It is built using **Ruby on Rails** and provides an endpoint to retrieve a list of flowers.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Provides a RESTful API to fetch flower data
+- Reads flower data from a JSON file (a database will be created in the next iteration)
+- Deployed using AWS Elastic Beanstalk
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+- [Ruby](https://www.ruby-lang.org/)
+- [Rails](https://rubyonrails.org/)
+- [AWS CLI](https://aws.amazon.com/cli/)
+- [Terraform](https://developer.hashicorp.com/terraform/cli)
 
-* Database creation
+## Install dependencies
 
-* Database initialization
+```
+bundle install
+```
 
-* How to run the test suite
+## Running
 
-* Services (job queues, cache servers, search engines, etc.)
+Start the Flower Shop API server:
 
-* Deployment instructions
+```
+rails s
+```
 
-* ...
+The app will be available at http://localhost:3000.
+
+## Deploying
+
+The API is deployed using AWS Elastic Beanstalk.
+
+Initialise Elastic Beanstalk (you don't need to do this if you deploy using GitHub Actions). Remember to configure your `awscli` first:
+
+```
+eb init -p "Ruby" flower-shop-api --region ap-southeast-2
+```
+
+Deploy the application to AWS Elastic Beanstalk.
+
+```
+eb deploy flower-shop-api-env
+
+```
+
+## Running tests
+
+To run tests:
+
+```
+bundle exec rspec
+
+```
