@@ -1,4 +1,3 @@
-output "frontend_url" {
-  value       = aws_s3_bucket.frontend_bucket.website_endpoint
-  description = "The public URL of the deployed flower shop frontend"
+output "cloudfront_domain" {
+  value = aws_cloudfront_distribution.frontend_distribution.domain_name
 }
